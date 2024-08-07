@@ -1,12 +1,13 @@
 # Gerenciamento de Rifas    
 ## Descrição do Sistema
- Rifa Manager é um sistema de gerenciamento de rifas online, com esse sistema é possivel que um usuário crie uma rifa com determinado numero de bilhetes com um preço fixo, e também é possivel que um usuário compre bilhetes de outras rifas. Além disso, o Administrador tem a capacidade de editar ou até mesmo deletar rifas de outros usuários. 
+Rifa Manager é um sistema online avançado para gerenciamento de rifas, permitindo que os usuários criem rifas personalizadas com um número específico de bilhetes a um preço fixo. Além disso, os usuários podem adquirir bilhetes de rifas criadas por outros participantes. O sistema também permite que administradores editem rifas criadas por outros usuários, garantindo maior flexibilidade e controle sobre as rifas ativas.
 
- ## Tecnologias
-- **IDE:Visual Studio Code**
-- **React.Js**
-- **PostgreSQL**
-- **Node.js**
+ ## Tecnologias Utilizadas
+- **React.Js - 18.2.0**
+- **Javascript -  ECMAScript 2023(ES14)**
+- **PostgreSQL - 16.0**
+- **Node.js - 20.9.0**
+- **Jest**
 
  ## Arquitetura
 - **MVC**
