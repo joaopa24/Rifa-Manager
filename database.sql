@@ -1,10 +1,12 @@
 CREATE TABLE "Usuario" (
   "user_id" integer PRIMARY KEY,
   "name" text,
-  "password" varchar(10),
+  "password" varchar(20),
+  "email" text,
+  "cpf" varchar(11),
+  "celular" varchar(11),
   "reset_token" text,
   "reset_token_expire" text,
-  "followed_user_id" integer,
   "is_admin" boolean,
   "created_at" timestamp,
   "updated_at" timestamp
@@ -17,6 +19,7 @@ CREATE TABLE "Pertence" (
 
 CREATE TABLE "Rifa" (
   "rifa_id" integer PRIMARY KEY,
+  "user_id" integer UNIQUE,
   "name" varchar,
   "numberOfTicket" integer,
   "created_at" timestamp,
@@ -28,12 +31,13 @@ CREATE TABLE "Compra" (
   "id_compra" integer PRIMARY KEY,
   "id_user" integer,
   "id_bilhete" integer,
-  "created_at" timestamp
+  "created_at" timestamp,
+  "status" boolean
 );
 
 CREATE TABLE "Bilhete" (
   "id_bilhete" integer PRIMARY KEY,
-  "id_rifa" varchar,
+  "id_rifa" integer,
   "name" text,
   "status" varchar,
   "created_at" timestamp
