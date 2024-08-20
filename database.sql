@@ -31,6 +31,7 @@ CREATE TABLE "Compra" (
   "id_compra" integer PRIMARY KEY,
   "id_user" integer,
   "id_bilhete" integer,
+  "id_rifa" integer,
   "created_at" timestamp,
   "status" boolean
 );
