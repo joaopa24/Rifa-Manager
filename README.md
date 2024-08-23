@@ -10,16 +10,54 @@ Rifa Manager é um sistema online avançado para gerenciamento de rifas, permiti
 - **Node.js - 20.9.0**
 - **Jest - 29.7**
 
- ## Arquitetura
-- **MVC**
+## Estrutura do Projeto
 
+```plaintext
+Rifa-Manager/
+  ├── public/                 
+  ├── Diagramas/                    
+  ├── node_modules/              
+  ├── src/
+  │   ├── app/
+  │   │   ├── controllers/       
+  │   │   ├── middlewares/      
+  │   │   ├── models/            
+  │   │   ├── services/               
+  |   |   ├── validators/ 
+  │   │   └── views/       
+  |   ├── config/
+  │   │   ├── db.js/       
+  │   │   └──  session.js/      
+  │   ├──lib/         
+  │   │   ├── mailer.js/                
+  |   |   └── utils.js/      
+  │   ├──routes/   
+  |   |
+  │   └──  server.js
+  │
+  │
+  ├── .gitignore                 
+  ├── package-lock.json          
+  ├── package.json              
+  ├── database.sql  
+  └── README.md                  # Informações sobre o projeto
+```
 ## Principais Funcionalidades
-- **Cadastro de Usuários**
-- **Cadastro de Rifas**
-- **Realização de Compra de Bilhetes de uma Rifa**
+- Criação de Rifas
+- Gerenciamento de Clientes, Rifas e Compras
+- Comprar Bilhetes em Rifas de outros Clientes do Sistema
+- Administrador tem a capacidade de aprovar ou rejeitar uma Compra
 
+## Padrões de Commits
+- feat: Commits que adicionam ou removem uma nova funcionalidade.
+- fix: Commits que corrigem um bug.
+- refactor: Commits que reescrevem/restruturam o código, mas não alteram o comportamento da API.
+- style: Commits que não afetam o significado do código (espaçamento, formatação, ponto e vírgula faltando, etc.).
+- test: Commits que adicionam testes ausentes ou corrigem testes existentes.
+- docs: Commits que afetam apenas a documentação.
+- chore: Commits diversos, como modificação de arquivos .gitignore.
 
 ## Colaboradores
-- **João Lucas Pereira de Almeida**
-- **João Pedro Dos Reis Moura**
-- **Ketlyn Sara Alves Ribeiro**
+- João Lucas Pereira de Almeida
+- João Pedro Dos Reis Moura
+- Ketlyn Sara Alves Ribeiro
