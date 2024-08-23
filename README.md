@@ -61,6 +61,16 @@ Rifa-Manager/
 - docs: Commits que afetam apenas a documentação.
 - chore: Commits diversos, como modificação de arquivos .gitignore.
 
+# Boas Práticas 
+- Aplicar o Open/Closed Principle (OCP) do SOLID: O sistema vai ser aberto para novas atualizações porém fechado para a modificação da base já criada.
+- Siga um Padrão de Notação: Use um estilo de codificação consistente (como nomes de variáveis e indentação) para facilitar a leitura e manutenção do código.
+- Comente o Código: Adicione comentários claros para explicar partes complexas do código, mas evite comentar o óbvio. Isso ajuda na compreensão e manutenção.
+- Testes Automatizados: testes para verificar se o código funciona corretamente e para evitar problemas futuros.
+- Mantenha a Simplicidade (KISS): Faça o código o mais simples possível. Soluções simples são mais fáceis de entender e manter.
+- Siga um Padrão de Notação: Use um estilo de codificação consistente (como nomes de variáveis e indentação) para facilitar a leitura e manutenção do código.
+
+
+
 # Branchs
 - main: Branch principal que sempre deve refletir a versão estável e final do projeto. Não deve ser usada para o desenvolvimento diário.
 - development: Branch onde novas funcionalidades e correções são implementadas. O merge para a main deve ocorrer apenas quando todas as funcionalidades e testes estiverem concluídos, garantindo a estabilidade da aplicação.
