@@ -7,7 +7,7 @@ Rifa Manager é um sistema online avançado para gerenciamento de rifas, permiti
 - Styled Components - 6.1.12
 - Javascript -  ECMAScript 2023(ES14)
 - PostgreSQL - 16.0
-- Node.js - 20.9.0
+- Node.js - 20.17.0
 - Jest - 29.7
 
 ## Estrutura do Projeto
