@@ -61,6 +61,10 @@ Rifa-Manager/
 - docs: Commits que afetam apenas a documentação.
 - chore: Commits diversos, como modificação de arquivos .gitignore.
 
+# Branchs
+- main: Branch principal que sempre deve refletir a versão estável e final do projeto. Não deve ser usada para o desenvolvimento diário.
+- development: Branch onde novas funcionalidades e correções são implementadas. O merge para a main deve ocorrer apenas quando todas as funcionalidades e testes estiverem concluídos, garantindo a estabilidade da aplicação.
+
 ## Colaboradores
 - João Lucas Pereira de Almeida
 - João Pedro Dos Reis Moura
