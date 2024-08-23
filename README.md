@@ -23,12 +23,12 @@ Rifa-Manager/
   ├── node_modules/              
   ├── src/
   │   ├── app/
-  │   │   ├── controllers/       
-  │   │   ├── middlewares/      
-  │   │   ├── models/            
-  │   │   ├── services/               
-  |   |   ├── validators/ 
-  │   │   └── views/       
+  │   │   ├── controllers/  #Gerencia a lógica de negócios e a comunicação entre modelos e views.       
+  │   │   ├── middlewares/  #Intercepta e processa requisições antes de chegarem aos controladores.   
+  │   │   ├── models/       #Define as estruturas de dados e interage com o banco de dados.      
+  │   │   ├── services/     #Encapsula lógica de negócio complexa para reutilização em vários controladores.         
+  |   |   ├── validators/   #Verifica e valida dados de entrada para garantir conformidade.
+  │   │   └── views/        #Renderiza a interface de usuário ou gera a resposta visual/textual.
   |   ├── config/
   │   │   ├── db.js/       
   │   │   └──  session.js/      
