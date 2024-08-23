@@ -1,0 +1,13 @@
+# Ignorar arquivos .log
+*.log
+
+# Ignorar arquivos temporários
+*.tmp
+
+# Ignorar arquivos de backup
+*~
+
+# Ignorar arquivos específicos
+TrabalhoEng.png
+Requisitos/Entidade.xlsx
+Rifa.jpg
