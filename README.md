@@ -14,7 +14,11 @@ Rifa Manager é um sistema online avançado para gerenciamento de rifas, permiti
 
 ```plaintext
 Rifa-Manager/
-  ├── public/                 
+  ├── public/
+  |   ├──assets/
+  |   ├──images/
+  |   ├──scripts/  
+  |   └──styles/
   ├── Diagramas/                    
   ├── node_modules/              
   ├── src/
