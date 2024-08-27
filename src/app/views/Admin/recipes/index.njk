@@ -1,0 +1,31 @@
+{% extends "Admin/layout.njk" %}
+{% block content %}
+<div class="global">
+<div class="recipes">
+    <div class="recipe_title">
+        <p>Gerenciar Rifas</p>
+         
+        <a class="button" href="/admin/Receitas/criar">Criar Rifa</a>
+         
+    </div>
+    <div class="recipe_cards">
+       {% for recipe in rifas %}
+           <div class="card" id="{{recipe.id}}">
+               <div class="card_image">
+                   <img src="{{recipe.image.src}}" alt="">
+               </div>
+               <div class="card_info">
+                   <p>{{recipe.name}}</p>
+                   <p>Status: </p>
+                   <p>Data do Sorteio: </p>
+                   <p>por {% for chef in chefsOptions %}
+                    {% if recipe.chef_id === chef.id %}{{ chef.name }}{% endif %}
+                   {% endfor %}</p>
+                   <a href="/admin/Receitas/{{recipe.rifa_id}}">Visualizar</a>
+               </div>
+           </div>
+       {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

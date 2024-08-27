@@ -1,0 +1,11 @@
+{% extends "Admin/session/layout.njk" %}
+{% block content %}
+<div class="session_content">
+    <div class="session_form">
+        <form action="/admin/users/cadastro" method="POST" enctype="multipart/form-data">
+            {% include 'Admin/session/registerfields.njk'%}
+
+            <button type="submit">Salvar receita</button>
+          </form>  
+        </div>
+{% endblock%}

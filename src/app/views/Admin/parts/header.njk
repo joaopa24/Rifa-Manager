@@ -1,0 +1,22 @@
+<header>
+    <div class="container-header">
+    <div class="logo">
+        <a href="/admin/Receitas/"><img src="/assets/logod.png" alt=""></a>
+    </div>
+    <div class="linksadmin">
+        {% if not isAdmin %}
+        <a href="/admin/Receitas">Minhas Rifas</a>
+        <a href="/admin/users">Clientes</a>
+        <a href="/admin/compras">Compras</a>
+        <a href="/admin/catalogo">Catálogo</a>
+        {% endif %}
+    </div>
+    {% if session.userId %}
+    <div class="logout_button">
+        <form action="/admin/users/logout" method="POST">
+            <button>Sair</button>
+        </form>
+    </div>
+    {% endif %}
+    </div>
+</header>

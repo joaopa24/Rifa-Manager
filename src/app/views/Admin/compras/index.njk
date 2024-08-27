@@ -1,0 +1,29 @@
+{% extends "Admin/layout.njk" %}
+{% block content %}
+<div class="global">
+<div class="recipes">
+    <div class="recipe_title">
+        <p>Gerenciar Compra de Clientes</p>
+         
+        <a class="button" href="/admin/compras/criar">Criar Compra</a>
+         
+    </div>
+    <div class="recipe_cards">
+       {% for recipe in compras %}
+           <div class="card" id="{{recipe.rifa_id}}">
+               <div class="card_info">
+                   <p>Compra: #{{recipe.compra_id}}</p>
+                   {% if recipe.status == true %}
+                   <p>Status: Aprovado</p>
+                   {% endif %}
+                   {% if recipe.status == false %}
+                   <p>Status: Não Aprovado</p>
+                   {% endif %}
+                   <a href="/admin/compras/{{recipe.compra_id}}">Visualizar</a>
+               </div>
+           </div>
+       {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

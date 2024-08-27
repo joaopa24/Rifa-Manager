@@ -1,0 +1,27 @@
+{% extends "Admin/layout.njk" %}
+
+{% block content %}
+<div class="global">
+    <div class="recipes">
+        <div class="recipe_title">
+            <p>Gerenciar Rifas</p>
+            <a class="button" href="/admin/Receitas/criar">Criar Receita</a>
+        </div>
+        <div class="recipe_cards">
+           {% for rifa in rifas %}
+               <div class="card" id="{{rifa.id}}">
+                   <div class="card_info">
+                       <p>{{ rifa.name }}</p>
+                       <p>Bilhetes disponíveis: {{ rifa.numerobilhetes }}</p>
+                       <form action="/admin/compras/comprar" method="POST" class="buy-form">
+                           <input type="hidden" name="rifa_id" value="{{ rifa.id }}">
+                           <input type="number" name="quantity" min="1" max="{{ rifa.numerobilhetes }}" required>
+                           <button type="submit" class="button white-text">Comprar</button>
+                       </form>
+                   </div>
+               </div>
+           {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
