@@ -14,6 +14,6 @@
   Exemplo: RNF[01], RNF[03], RNF[03], ...
 
 ## Regras que Documento de Requisitos Seguirá
-- Evite frases Grandes: Frases curtas e objetivas facilitam a compreensão e evitam ambiguidades
+- Evite frases Grandes: Frases curtas e objetivas facilitam a compreensão e evitam ambiguidades (média de 25 palavras)
 - Mantenha uma estrutura hierárquica dos requisitos: Organize os requisitos em níveis para facilitar a visualização e a compreensão.
 - Agrupar corretamente os requisitos: Crie grupos de requisitos coesos para melhorar a rastreabilidade e a manutenção.
