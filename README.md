@@ -3,8 +3,8 @@
 Rifa Manager é um sistema online avançado para gerenciamento de rifas, permitindo que os usuários criem rifas personalizadas com um número específico de bilhetes a um preço fixo. Além disso, os usuários podem adquirir bilhetes de rifas criadas por outros participantes. O sistema também permite que administradores editem rifas criadas por outros usuários, garantindo maior flexibilidade e controle sobre as rifas ativas.
 
  ## Tecnologias Utilizadas
-- React.Js - 18.2.0
-- Styled Components - 6.1.12
+
+- Nunjucks - 3.2.2
 - Javascript -  ECMAScript 2023(ES14)
 - PostgreSQL - 16.0
 - Node.js - 20.17.0
@@ -19,7 +19,9 @@ Rifa-Manager/
   |   ├──images/
   |   ├──scripts/  
   |   └──styles/
-  ├── Diagramas/                    
+  ├── Diagramas/
+  ├── Requisitos/
+  ├── Padroes-Adotados/                          
   ├── node_modules/              
   ├── src/
   │   ├── app/
@@ -38,8 +40,6 @@ Rifa-Manager/
   │   ├──routes/   
   |   |
   │   └──  server.js
-  │
-  │
   ├── .gitignore                 
   ├── package-lock.json          
   ├── package.json              
