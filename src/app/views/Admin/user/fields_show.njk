@@ -17,6 +17,18 @@
                         <input type="password" name="password" placeholder="Digite a sua Senha">
                     </div>
                 </div>
+                <div class="item">
+        <p>CPF</p>
+        <div>
+            <input type="text" name="cpf" value="{{user.cpf}}" placeholder="Digite o CPF" maxlength="11">
+        </div>
+    </div>
+    <div class="item">
+        <p>Celular</p>
+        <div>
+            <input type="text" name="celular" value="{{user.celular}}" placeholder="Digite o celular" maxlength="11">
+        </div>
+    </div>
 
                 <input type="hidden" name="is_admin" value="{{user.is_admin}}">
 </div>

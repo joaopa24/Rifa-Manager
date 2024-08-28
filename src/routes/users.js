@@ -34,7 +34,7 @@ routes.post('/register', onlyAdmin,UserValidator.post, UserController.post)
 
 // Rotas que o administrador irá acessar para gerenciar usuários
 routes.get('/' , onlyUsers, forAdmin, UserController.list)
-routes.get("/:id/edit", onlyAdmin ,onlyUsers,RecipeOwner, UserController.edit)
+routes.get("/:id/edit", onlyAdmin ,onlyUsers, UserController.edit)
 routes.put('/', onlyUsers, UserValidator.update,UserController.update)
 routes.delete("/", onlyUsers, onlyAdmin, UserController.delete)
   

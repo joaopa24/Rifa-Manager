@@ -28,5 +28,8 @@ module.exports = {
           
               const results = await db.query(query, values)
               return results.rows[0].id
+          },
+          delete(id){
+            return db.query(`DELETE FROM ${this.table} WHERE id = $1`, [id])
           }
 }

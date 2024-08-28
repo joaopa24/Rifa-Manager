@@ -52,30 +52,6 @@ const LoadService = {
             return null
         }
     },
-    
-    async rifasMy() {
-        try {
-            const rifas = await Rifa.find(this.filter);
-            const rifasFormatted = await Promise.all(rifas.map(format));
-            return rifasFormatted;
-        } catch (error) {
-            console.error('Error loading rifas:', error);
-            return [];
-        }
-    },
-    
-    async rifasMy() {
-        try {
-            const rifas = await Rifa.find(this.filter)
-
-            const rifasFormatted = await Promise.all(rifas.map(format))
-
-            return rifasFormatted
-        } catch (error) {
-            console.error('Error loading rifas:', error)
-            return []
-        }
-    },
 
     async rifas() {
         try {

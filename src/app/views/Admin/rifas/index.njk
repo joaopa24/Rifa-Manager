@@ -1,0 +1,32 @@
+{% extends "Admin/layout.njk" %}
+{% block content %}
+<div class="global">
+<div class="recipes">
+    <div class="recipe_title">
+         {% if session.isAdmin == true %}
+        <p>Gerenciar Rifas</p>
+        {% endif %}
+        {% if session.isAdmin == false %}
+        <p>Minhas Rifas</p>
+        {% endif %}
+        {% if session.isAdmin == false %}
+        <a class="button" href="/admin/Receitas/criar">Criar Rifa</a>
+         {% endif %}
+    </div>
+    <div class="recipe_cards">
+       {% for rifa in rifas %}
+           <div class="card" id="{{rifa.id}}">
+               <div class="card_image">
+                   <img src="{{rifa.image.src}}" alt="">
+               </div>
+               <div class="card_info">
+                   <p>{{rifa.name}}</p>
+                   <p>Status: {{rifa.status}}</p>
+                   <a href="/admin/rifas/{{rifa.rifa_id}}">Visualizar</a>
+               </div>
+           </div>
+       {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

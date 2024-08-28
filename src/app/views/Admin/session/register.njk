@@ -3,9 +3,11 @@
 <div class="session_content">
     <div class="session_form">
         <form action="/admin/users/cadastro" method="POST" enctype="multipart/form-data">
+            <div class="session_header">
+                <p>Cadastro</p>
+            </div>
             {% include 'Admin/session/registerfields.njk'%}
-
-            <button type="submit">Salvar receita</button>
+            <button type="submit">Cadastrar</button>
           </form>  
         </div>
 {% endblock%}

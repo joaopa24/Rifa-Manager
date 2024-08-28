@@ -29,4 +29,10 @@
             <input type="text" name="celular" value="{{user.celular}}" placeholder="Digite o celular" maxlength="11">
         </div>
     </div>
+     <div class="input_isAdmin">
+        <div>
+            <input type="checkbox" name="is_admin" value=false {% if user.is_admin == true %}checked {% endif %}>
+        </div>
+        <p>Administrador</p>
+    </div>
 </div>

@@ -591,7 +591,11 @@ button[type="submit"] a{
     display: flex;
     justify-content: center;
     padding: 35px;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
+}
+
+.logoSession img {
+    width: 250px;
 }
 
 .session_content{
@@ -640,6 +644,7 @@ button[type="submit"] a{
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin-top: 70px;
+    margin-bottom: 20px;
 }
 
 .input_isAdmin{
