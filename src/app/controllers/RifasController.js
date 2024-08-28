@@ -79,9 +79,11 @@ module.exports = {
     const recipeFiles = filesResults.map(files => {
         const file_id = files.rows[0].id
         File.RecipeFiles({ recipe_id, file_id })
-    })
-    
+    })  
 
+  
+
+    
     await Promise.all(recipeFiles)
 
     // Cria os bilhetes
