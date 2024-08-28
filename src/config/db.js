@@ -5,5 +5,5 @@ module.exports = new Pool({
     password:'123',
     host:'localhost',
     port:5432,
-    database:'FoodfyAdvanced'
+    database:'RifaManager'
 })
