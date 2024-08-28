@@ -4,7 +4,7 @@ const LoadComprasService = require('../app/services/LoadComprasService') // Serv
 
 
 describe("Create Purchase cases", () => {
-    it("Should render the create page", async () => {
+    it("1 - Should render the create page", async () => {
         const mockRender = jest.fn();
         
         await comprasController.create(
@@ -17,7 +17,7 @@ describe("Create Purchase cases", () => {
         expect(mockRender).toHaveBeenCalledWith("Admin/compras/create");
     });
 
-    it("Should return a message if any field is empty", async () => {
+    it("2 - Should return a message if any field is empty", async () => {
         const mockSend = jest.fn();
         
         await comprasController.post(
@@ -35,7 +35,7 @@ describe("Create Purchase cases", () => {
         expect(mockSend).toHaveBeenCalledWith("Por favor preencha todos os campos!");
     });
 
-    it("Should create a new purchase and redirect if all fields are filled", async () => {
+    it("3 - Should create a new purchase and redirect if all fields are filled", async () => {
         const mockRedirect = jest.fn();
         
         // Mockando Compra.create para simular a criação da compra
@@ -58,7 +58,7 @@ describe("Create Purchase cases", () => {
 });
 
 describe("Edit Purchase cases", () => {
-    it("Should return a message if any required field is empty", async () => {
+    it("4 - Should return a message if any required field is empty", async () => {
         const mockSend = jest.fn();
         
         await comprasController.put(
@@ -79,7 +79,7 @@ describe("Edit Purchase cases", () => {
         expect(mockSend).toHaveBeenCalledWith("Por favor, preencha todos os campos!");
     });
 
-     it("Should update a compra and redirect if all fields are filled", async () => {
+     it("5 - Should update a compra and redirect if all fields are filled", async () => {
         const mockRedirect = jest.fn();
         
         // Mockando Compra.update para simular a atualização da compra
@@ -101,7 +101,7 @@ describe("Edit Purchase cases", () => {
         expect(mockRedirect).toHaveBeenCalledWith("/admin/compras/1");
     });
 
-    it("Should return a message if the compra is not found", async () => {
+    it("6 - Should return a message if the compra is not found", async () => {
         const mockSend = jest.fn();
         
         // Mockando LoadComprasService.load para retornar null
@@ -119,7 +119,7 @@ describe("Edit Purchase cases", () => {
         expect(mockSend).toHaveBeenCalledWith("Compra não encontrada");
     });
 
-    it("Should render the edit page with compra data when compra is found", async () => {
+    it("7 - Should render the edit page with compra data when compra is found", async () => {
         const mockRender = jest.fn();
         
         // Mockando LoadComprasService.load para retornar uma compra válida
@@ -147,7 +147,7 @@ describe("Edit Purchase cases", () => {
 });
 
 describe("Get Purchase cases", () => {
-    it("Should render the index page with compras when loading is successful", async () => {
+    it("8 - Should render the index page with compras when loading is successful", async () => {
         const mockRender = jest.fn();
         
         // Mockando LoadComprasService.load para retornar uma lista de compras
@@ -171,7 +171,7 @@ describe("Get Purchase cases", () => {
         });
     });
 
-    it("Should handle error when loading compras fails", async () => {
+    it("9 - Should handle error when loading compras fails", async () => {
         const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
 
         // Mockando LoadComprasService.load para lançar um erro
@@ -197,7 +197,7 @@ describe("Get Purchase cases", () => {
 });
 
 describe("Delete Purchase cases", () => {
-    it("Should delete a compra and redirect to the index page", async () => {
+    it("10 - Should delete a compra and redirect to the index page", async () => {
         const mockRedirect = jest.fn();
         
         // Mockando Compra.delete para simular a exclusão da compra
