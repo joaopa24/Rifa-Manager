@@ -1,13 +1,8 @@
 const { unlinkSync } = require('fs')
 const { hash } = require('bcryptjs')
 const User = require('../models/user')
-const Recipe = require('../models/recipe')
+const Rifa = require('../models/rifa')
 const mailer = require('../../lib/mailer')
-
-function createPassword() {
-    const password = Math.random().toString(36).substr(2)
-    return password
-}
 
 module.exports = {
     async list(req, res) {
@@ -102,9 +97,9 @@ module.exports = {
     },
     async delete(req, res) {
         try {
-            const recipes = await Recipe.findAll({where:{user_id:req.body.id}})
+            const rifas = await Rifa.findAll({where:{user_id:req.body.id}})
             
-            const allFilesPromise = recipes.map(recipe => Recipe.files(recipe.id))
+            const allFilesPromise = rifas.map(rifas => Rifa.files(rifa.id))
               
             let promiseResults = await Promise.all(allFilesPromise)
     

@@ -14,19 +14,15 @@
          {% endif %}
     </div>
     <div class="recipe_cards">
-       {% for recipe in rifas %}
-           <div class="card" id="{{recipe.id}}">
+       {% for rifa in rifas %}
+           <div class="card" id="{{rifa.id}}">
                <div class="card_image">
-                   <img src="{{recipe.image.src}}" alt="">
+                   <img src="{{rifa.image.src}}" alt="">
                </div>
                <div class="card_info">
-                   <p>{{recipe.name}}</p>
-                   <p>Status: </p>
-                   <p>Data do Sorteio: </p>
-                   <p>por {% for chef in chefsOptions %}
-                    {% if recipe.chef_id === chef.id %}{{ chef.name }}{% endif %}
-                   {% endfor %}</p>
-                   <a href="/admin/Receitas/{{recipe.rifa_id}}">Visualizar</a>
+                   <p>{{rifa.name}}</p>
+                   <p>Status: {{rifa.status}}</p>
+                   <a href="/admin/rifas/{{rifa.rifa_id}}">Visualizar</a>
                </div>
            </div>
        {% endfor %}

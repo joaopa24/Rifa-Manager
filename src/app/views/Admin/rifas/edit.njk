@@ -2,15 +2,15 @@
 {% block content %}
     <div class="create_content">
         <div class="forms">
-            <form action="/admin/Receitas?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/admin/rifas?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="create_header">
                     <p>Editando Rifa</p>
                     <input type="hidden" name="id" value="{{ rifa.rifa_id }}">
                     <button type="submit">Salvar receita</button>
                 </div>
-                {% include "Admin/recipes/editfields.njk" %}
+                {% include "Admin/rifas/editfields.njk" %}
             </form>
-            <form id="form-delete" action="/admin/Receitas?_method=DELETE" method="POST">
+            <form id="form-delete" action="/admin/rifas?_method=DELETE" method="POST">
                 <input type="hidden" name="id" value="{{ rifa.rifa_id }}">
                 <button type="submit">Deletar</button>
             </form>

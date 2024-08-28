@@ -18,7 +18,7 @@ module.exports = {
             }
             console.log(rifas)
  
-            return res.render("Admin/recipes/index", { rifas, isAdmin});
+            return res.render("Admin/rifas/index", { rifas, isAdmin});
         } catch (error) {
             console.error("Erro ao carregar rifas:", error);
             return res.status(500).send("Erro ao carregar rifas.");
@@ -26,7 +26,7 @@ module.exports = {
     },
 
     async create(req, res) {
-        return res.render("Admin/recipes/create");
+        return res.render("Admin/rifas/create");
     },
 
     async rifa_admin(req, res) {
@@ -38,7 +38,7 @@ module.exports = {
             if (!rifa) {
                 return res.status(404).send("Rifa não encontrada");
             }
-            return res.render("Admin/recipes/recipe", { rifa, files: rifa.files });
+            return res.render("Admin/rifas/recipe", { rifa, files: rifa.files });
         } catch (error) {
             console.error("Erro ao carregar rifa:", error);
             return res.status(500).send("Erro ao carregar rifa.");
@@ -51,7 +51,7 @@ module.exports = {
                 where: { rifa_id: req.params.id }
             });
             if (!rifa) return res.status(404).send("Rifa não encontrada");
-            return res.render("Admin/recipes/edit", { rifa, files: rifa.files });
+            return res.render("Admin/rifas/edit", { rifa, files: rifa.files });
         } catch (error) {
             console.error("Erro ao carregar rifa para edição:", error);
             return res.status(500).send("Erro ao carregar rifa para edição.");
@@ -90,7 +90,7 @@ module.exports = {
         Bilhete.create(req.body, recipe_id)
     }
 
-    return res.redirect(`/admin/Receitas/${recipe_id}`)
+    return res.redirect(`/admin/rifas/${recipe_id}`)
 },
     async put(req, res) {
         console.log(req.body) 
@@ -130,7 +130,7 @@ module.exports = {
                 await Promise.all(removedFilesPromises);
             }
             await Rifa.update(req.body);
-            return res.redirect(`/admin/Receitas/${req.body.id}`);
+            return res.redirect(`/admin/rifas/${req.body.id}`);
         } catch (error) {
             console.error("Erro ao atualizar a rifa:", error);
             return res.status(500).send("Erro ao atualizar a rifa.");
@@ -143,7 +143,7 @@ module.exports = {
             // Implementa a funcionalidade de exclusão se necessário
             await Rifa.delete(req.body.id);
             console.log(req.body)  
-            return res.redirect("/admin/Receitas");
+            return res.redirect("/admin/rifas");
         } catch (error) {
             console.error("Erro ao excluir a rifa:", error);
             return res.status(500).send("Erro ao excluir a rifa.");

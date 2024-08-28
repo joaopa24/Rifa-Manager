@@ -5,7 +5,6 @@ const catalogo = require('../app/controllers/ComprasController') // Controller p
 
 // Rotas para compras
 routes.get("/", catalogo.catalogo) // Listar todas as compras
-// Rota para comprar bilhetes
 routes.post("/comprar", catalogo.comprarBilhetes); // Nova rota para a compra de bilhetes
 
 module.exports = routes

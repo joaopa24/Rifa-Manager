@@ -6,7 +6,7 @@ const users = require('./users')
 const Compra = require('./compras')
 const catalogo = require('./catalogo')
 
-routes.use('/admin/Receitas', rifas)
+routes.use('/admin/rifas', rifas)
 routes.use('/admin/users', users)
 routes.use('/admin/compras', Compra)
 routes.use('/admin/catalogo', catalogo)
