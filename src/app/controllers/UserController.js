@@ -12,13 +12,14 @@ function createPassword() {
 module.exports = {
     async list(req, res) {
         try {
+            const isAdmin = req.session.isAdmin
             const users = await User.findAll()
 
             const user = req.session.userId.id
 
             const error = req.session.error
 
-            return res.render("Admin/user/index.njk", { users, user, error })
+            return res.render("Admin/user/index.njk", { isAdmin,users, user, error })
         } catch (error) {
             console.error(error)
         }
@@ -83,13 +84,15 @@ module.exports = {
     async update(req, res) {
         try {
             const { user } = req
-
-            let { name, email, is_admin } = req.body
+            console.log(req.body)
+            let { name, email, is_admin, cpf, celular } = req.body
 
             await User.update(user.id, {
                 name,
                 email,
-                is_admin
+                is_admin,
+                cpf,
+                celular
             })
 
             return res.redirect('/admin/users')
@@ -100,14 +103,14 @@ module.exports = {
     async delete(req, res) {
         try {
             const recipes = await Recipe.findAll({where:{user_id:req.body.id}})
-
+            
             const allFilesPromise = recipes.map(recipe => Recipe.files(recipe.id))
-    
+              
             let promiseResults = await Promise.all(allFilesPromise)
     
             User.delete(req.body.id)
-            req.session.destroy()
-    
+            //req.session.destroy()
+            const users = await User.findAll() 
             promiseResults.map(files => {
                 files.map(file =>{
                     try{
@@ -117,9 +120,9 @@ module.exports = {
                     }
                 })
             })
-    
-            return res.render("Admin/session/login.njk", {
-                sucess:"Conta Deletada com sucesso"
+            return res.render("Admin/user/index.njk", {
+                sucess:"Conta Deletada com sucesso",
+                users
             })
         } catch (error) {
             return res.render("/admin/users/",{

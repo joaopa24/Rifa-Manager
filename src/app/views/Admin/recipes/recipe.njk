@@ -7,7 +7,7 @@
                     <p>Rifa:{{rifa.name}}</p>
                 </div>
                 <div class="show_edit">
-                    <a href="/admin/Receitas/{{rifa.rifa_id}}/edit">Editar Receita</a>
+                    <a href="/admin/Receitas/{{rifa.rifa_id}}/edit">Editar Rifa</a>
                 </div>
             </div>
             <div class="gallery">
@@ -32,37 +32,18 @@
             <div class="show_info">
                 <div class="title">
                     <p>{{recipe.title}}</p>
-                    <p>{% for chef in chefsOptions %}
-                    {% if recipe.chef_id === chef.id %}{{ chef.name }}{% endif %}
-                   {% endfor %}</p>
                 </div>
                  <div class="title">
-                    <p>{{rifa.name}}</p>
-                    <p>{% for chef in chefsOptions %}
-                    {% if recipe.chef_id === chef.id %}{{ chef.name }}{% endif %}
-                   {% endfor %}</p>
+                    <p>Nome da Rifa: {{rifa.name}}</p>
                 </div>
                 <div class="title">
-                    <p>{{rifa.numerobilhetes}}</p>
-                    <p>{% for chef in chefsOptions %}
-                    {% if recipe.chef_id === chef.id %}{{ chef.name }}{% endif %}
-                   {% endfor %}</p>
+                    <p>Número de Bilhetes: {{rifa.numerobilhetes}}</p>
                 </div>
                   <div class="title">
                     <p>{{rifa.expire}}</p>
-                    <p>{% for chef in chefsOptions %}
-                    {% if recipe.chef_id === chef.id %}{{ chef.name }}{% endif %}
-                   {% endfor %}</p>
                 </div>
                   <div class="title">
                     <p>{{rifa.created_at}}</p>
-                    <p>{% for chef in chefsOptions %}
-                    {% if recipe.chef_id === chef.id %}{{ chef.name }}{% endif %}
-                   {% endfor %}</p>
-                </div>
-                <div class="show_information">
-                    <p>Informações adicionais</p>
-                    <p>{{recipe.information}}</p>
                 </div>
             </div>
         </div>

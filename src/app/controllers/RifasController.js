@@ -6,17 +6,19 @@ const LoadRifaService = require('../services/LoadRecipeService');  // Atualize e
 module.exports = {
     async index(req, res) {
         try {
+            const isAdmin = req.session.isAdmin
             let rifas 
             if(req.session.isAdmin == true){
               rifas = await LoadRifaService.load('rifas');  
-            } else {
-              rifas = await LoadRifaService.load('rifasMy',{
-                 where: {client_id: req.session.userId}
+            } 
+            if(req.session.isAdmin == false) {
+              rifas = await LoadRifaService.load('rifas',{
+                where: {client_id: req.session.userId}
               })
             }
-            
+            console.log(rifas)
  
-            return res.render("Admin/recipes/index", { rifas });
+            return res.render("Admin/recipes/index", { rifas, isAdmin});
         } catch (error) {
             console.error("Erro ao carregar rifas:", error);
             return res.status(500).send("Erro ao carregar rifas.");

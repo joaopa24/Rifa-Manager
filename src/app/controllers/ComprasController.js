@@ -1,5 +1,4 @@
 const Compra = require("../models/compra") // Modelo para compras
-const File = require("../models/file") // Modelo para arquivos, caso precise de anexos
 const Rifa = require("../models/rifa")
 const Bilhete = require("../models/Bilhete")
 const LoadComprasService = require('../services/LoadComprasService') // Serviço para carregar compras
@@ -7,10 +6,9 @@ const LoadComprasService = require('../services/LoadComprasService') // Serviço
 module.exports = {
     async index(req, res) {
         try {
-            const compras = await LoadComprasService.load('compras') // Carregar todas as compras
+            const compras = await LoadComprasService.load('compras')
     
             return res.render("Admin/compras/index", { compras }) // Renderizar a página de índice com as compras
-            
         } catch (error) {
             console.error(error)
         }
@@ -37,11 +35,12 @@ module.exports = {
     },
     async post(req, res) {
         const keys = Object.keys(req.body)
-        console.log(keys)
+
         for (const key of keys) {
             if (req.body[key] === "")
                 return res.send("Por favor preencha todos os campos!") // Validar campos
         }
+        
         const compra_id = await Compra.create(req.body) // Criar nova compra
       
         return res.redirect(`/admin/compras/`) // Redirecionar para a página da compra criada

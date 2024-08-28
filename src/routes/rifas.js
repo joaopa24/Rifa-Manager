@@ -4,7 +4,7 @@ const routes = express.Router()
 const { RecipeOwner } = require('../app/middlewares/session')
 
 const multer = require('../app/middlewares/multer')
-const recipes = require('../app/controllers/RecipesController')
+const recipes = require('../app/controllers/RifasController')
 
 routes.get("/", recipes.index)
 routes.get("/criar", recipes.create)

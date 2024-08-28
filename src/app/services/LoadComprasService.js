@@ -19,7 +19,7 @@ const LoadCompraService = {
     async compras() {
         try {
             const compras = await Compra.findAll(this.filter)
-            // Se não precisar formatar as compras, apenas retorne diretamente
+            
             return compras
         } catch (error) {
             console.error(error)

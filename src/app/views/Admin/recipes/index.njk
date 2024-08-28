@@ -3,10 +3,15 @@
 <div class="global">
 <div class="recipes">
     <div class="recipe_title">
+         {% if session.isAdmin == true %}
         <p>Gerenciar Rifas</p>
-         
+        {% endif %}
+        {% if session.isAdmin == false %}
+        <p>Minhas Rifas</p>
+        {% endif %}
+        {% if session.isAdmin == false %}
         <a class="button" href="/admin/Receitas/criar">Criar Rifa</a>
-         
+         {% endif %}
     </div>
     <div class="recipe_cards">
        {% for recipe in rifas %}

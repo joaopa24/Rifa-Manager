@@ -4,11 +4,16 @@
         <a href="/admin/Receitas/"><img src="/assets/logod.png" alt=""></a>
     </div>
     <div class="linksadmin">
-        {% if not isAdmin %}
+        {% if not session.isAdmin %}
         <a href="/admin/Receitas">Minhas Rifas</a>
         <a href="/admin/users">Clientes</a>
         <a href="/admin/compras">Compras</a>
         <a href="/admin/catalogo">Catálogo</a>
+        {% endif %}
+        {% if session.isAdmin %}
+        <a href="/admin/Receitas">Rifas</a>
+        <a href="/admin/users">Clientes</a>
+        <a href="/admin/compras">Compras</a>
         {% endif %}
     </div>
     {% if session.userId %}

@@ -3,13 +3,17 @@
 <div class="global">
 <div class="recipes">
     <div class="recipe_title">
+        {% if session.isAdmin == true %}
         <p>Gerenciar Compra de Clientes</p>
-         
-        <a class="button" href="/admin/compras/criar">Criar Compra</a>
-         
+         <a class="button" href="/admin/compras/criar">Criar Compra</a>
+        {% endif %}
+        {% if session.isAdmin == false %}
+        <p>Histórico de Compras</p>
+        {% endif %}
     </div>
     <div class="recipe_cards">
        {% for recipe in compras %}
+          {% if (recipe.client_id == session.userId) or (session.isAdmin == true) %}
            <div class="card" id="{{recipe.rifa_id}}">
                <div class="card_info">
                    <p>Compra: #{{recipe.compra_id}}</p>
@@ -22,6 +26,7 @@
                    <a href="/admin/compras/{{recipe.compra_id}}">Visualizar</a>
                </div>
            </div>
+           {% endif %}  
        {% endfor %}
     </div>
 </div>

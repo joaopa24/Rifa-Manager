@@ -4,16 +4,22 @@
         <div class="forms">
             <form action="/admin/Compras?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="create_header">
+                    {% if session.isAdmin == true %}
                     <p>Editando Receita</p>
+                    {% endif %}
+                    {% if session.isAdmin == true %}
                     <input type="hidden" name="id" value="{{ compra.compra_id }}">
                     <button type="submit">Salvar receita</button>
+                    {% endif %}
                 </div>
                 {% include "Admin/compras/fields.njk" %}
             </form>
+            {% if session.isAdmin == true %}
             <form id="form-delete" action="/admin/Compras?_method=DELETE" method="POST">
                 <input type="hidden" name="id" value="{{ compra.compra_id }}">
                 <button type="submit">Deletar</button>
             </form>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
